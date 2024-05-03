@@ -170,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				EC2C3FDD2BDD1D1500EFCFD4 /* Model */,
+				EC2C3FE02BDD1EC500EFCFD4 /* ViewModel */,
 				EC2C3FDA2BDCE63C00EFCFD4 /* View */,
-				EC2C3FE02BDD1EC500EFCFD4 /* Controller */,
 			);
 			path = OnBoardingScreen;
 			sourceTree = "<group>";
@@ -179,7 +179,8 @@
 		EC2C3FDA2BDCE63C00EFCFD4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EC2C3FEF2BDE76A400EFCFD4 /* OnboardingCollectionViewCell.swift */,
+				EC3E21482BE48B0700771D0C /* Cell */,
+				EC2C3FE92BDD3C3200EFCFD4 /* OnboardingViewController.swift */,
 			);
 			name = View;
 			path = "Vİew";
@@ -193,12 +194,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		EC2C3FE02BDD1EC500EFCFD4 /* Controller */ = {
+		EC2C3FE02BDD1EC500EFCFD4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				EC2C3FE92BDD3C3200EFCFD4 /* OnboardingViewController.swift */,
 			);
-			path = Controller;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		EC2C3FEB2BDD3DBB00EFCFD4 /* Extension */ = {
@@ -218,6 +218,14 @@
 			);
 			name = axiforma;
 			path = ../../../../../Downloads/axiforma;
+			sourceTree = "<group>";
+		};
+		EC3E21482BE48B0700771D0C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC2C3FEF2BDE76A400EFCFD4 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EC6CD5312BE1109A0000D972 /* LoginScreen */ = {

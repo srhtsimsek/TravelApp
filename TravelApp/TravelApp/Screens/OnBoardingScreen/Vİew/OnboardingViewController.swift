@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingViewController: UIViewController{
     
-    //MARK: - Properties
+    //MARK: Properties
     lazy var sliderCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -65,12 +65,12 @@ final class OnboardingViewController: UIViewController{
             OnboardingSlideItem(headline: "HADİ BAŞLAYALIM", subheadline: "Gideceğin ülkedeki konaklama yerlerini gör. Rezervasyon oluştur.", image: UIImage(resource: ._3))
         ]
     
-    //MARK: -Lifecycle
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
-    
+    //MARK: Buttons
     @objc func prevButtonClicked() {
         let prevIndex = max(pageControl.currentPage - 1, 0)
         let indexPath = IndexPath(item: prevIndex, section: 0)
@@ -94,10 +94,11 @@ final class OnboardingViewController: UIViewController{
             redirectToLogin()
         }
     }
+    //MARK: Helpers
     func redirectToLogin(){
         
     }
-    //MARK: -Helpers
+    //MARK: Config UI
     private func setupUI(){
         addUIElements()
         configCollectionView()
@@ -122,7 +123,7 @@ final class OnboardingViewController: UIViewController{
     }
 }
 
-    //MARK: -Extension
+    //MARK: Extension
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let countItems = slideItems.count
@@ -133,7 +134,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.reuseIdentifier, for: indexPath) as! OnboardingCollectionViewCell
         let slideItem = slideItems[indexPath.row]
-        cell.update(image: slideItem.image, headline: slideItem.headline, subheadline: slideItem.subheadline)
+        cell.updateItems(image: slideItem.image, headline: slideItem.headline, subheadline: slideItem.subheadline)
         return cell
     }
     
