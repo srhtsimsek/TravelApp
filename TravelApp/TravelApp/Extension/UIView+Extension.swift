@@ -41,16 +41,11 @@ extension UIView {
             heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
-    
+
     /// Adds multiple subviews to the current view.
     func addSubViewsFromExtension(_ views: UIView...){
         for view in views {
             addSubview(view)
         }
     }
-    /*func configureSize(height: CGFloat, widght: CGFloat) {
-        translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: height).isActive = true
-        widthAnchor.constraint(equalToConstant: widght).isActive = true
-    }*/
 }

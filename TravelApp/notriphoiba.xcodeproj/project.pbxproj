@@ -22,6 +22,10 @@
 		EC2C40092BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC2C3FF42BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf */; };
 		EC2C40152BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC2C40002BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf */; };
 		EC2C40172BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC2C40022BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf */; };
+		EC3C7ADC2BE880E20016C611 /* SignUpLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7ADB2BE880E20016C611 /* SignUpLoginController.swift */; };
+		EC3C7AE12BEA2DCA0016C611 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7AE02BEA2DCA0016C611 /* CustomTextField.swift */; };
+		EC3C7AE32BEB26CC0016C611 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7AE22BEB26CC0016C611 /* CustomButton.swift */; };
+		EC3C7AE52BEB28CA0016C611 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7AE42BEB28CA0016C611 /* CustomLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,16 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EC2C3FA02BDCD5EC00EFCFD4 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2C3FA02BDCD5EC00EFCFD4 /* notriphoiba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notriphoiba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2C3FA32BDCD5EC00EFCFD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC2C3FA52BDCD5EC00EFCFD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EC2C3FAD2BDCD5EC00EFCFD4 /* TravelApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelApp.xcdatamodel; sourceTree = "<group>"; };
 		EC2C3FAF2BDCD5ED00EFCFD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC2C3FB22BDCD5ED00EFCFD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC2C3FB42BDCD5ED00EFCFD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC2C3FB92BDCD5EE00EFCFD4 /* TravelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2C3FB92BDCD5EE00EFCFD4 /* notriphoibaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = notriphoibaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2C3FBD2BDCD5EE00EFCFD4 /* TravelAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppTests.swift; sourceTree = "<group>"; };
-		EC2C3FC32BDCD5EE00EFCFD4 /* TravelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2C3FC32BDCD5EE00EFCFD4 /* notriphoibaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = notriphoibaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2C3FC72BDCD5EE00EFCFD4 /* TravelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITests.swift; sourceTree = "<group>"; };
 		EC2C3FC92BDCD5EE00EFCFD4 /* TravelAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EC2C3FDE2BDD1D9500EFCFD4 /* OnboardingSlideItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlideItem.swift; sourceTree = "<group>"; };
@@ -61,6 +65,10 @@
 		EC2C3FF42BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kastelov  Axiforma Bold.otf"; sourceTree = "<group>"; };
 		EC2C40002BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kastelov  Axiforma Regular.otf"; sourceTree = "<group>"; };
 		EC2C40022BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kastelov  Axiforma SemiBold.otf"; sourceTree = "<group>"; };
+		EC3C7ADB2BE880E20016C611 /* SignUpLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLoginController.swift; sourceTree = "<group>"; };
+		EC3C7AE02BEA2DCA0016C611 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		EC3C7AE22BEB26CC0016C611 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		EC3C7AE42BEB28CA0016C611 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +109,9 @@
 		EC2C3FA12BDCD5EC00EFCFD4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC2C3FA02BDCD5EC00EFCFD4 /* TravelApp.app */,
-				EC2C3FB92BDCD5EE00EFCFD4 /* TravelAppTests.xctest */,
-				EC2C3FC32BDCD5EE00EFCFD4 /* TravelAppUITests.xctest */,
+				EC2C3FA02BDCD5EC00EFCFD4 /* notriphoiba.app */,
+				EC2C3FB92BDCD5EE00EFCFD4 /* notriphoibaTests.xctest */,
+				EC2C3FC32BDCD5EE00EFCFD4 /* notriphoibaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 		EC2C3FD82BDCE4B000EFCFD4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				EC3C7ADF2BEA2D8F0016C611 /* CustomViews */,
 				EC6CD5312BE1109A0000D972 /* LoginScreen */,
 				EC2C3FD92BDCE4B900EFCFD4 /* OnBoardingScreen */,
 			);
@@ -220,6 +229,16 @@
 			path = ../../../../../Downloads/axiforma;
 			sourceTree = "<group>";
 		};
+		EC3C7ADF2BEA2D8F0016C611 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C7AE02BEA2DCA0016C611 /* CustomTextField.swift */,
+				EC3C7AE22BEB26CC0016C611 /* CustomButton.swift */,
+				EC3C7AE42BEB28CA0016C611 /* CustomLabel.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		EC3E21482BE48B0700771D0C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +250,7 @@
 		EC6CD5312BE1109A0000D972 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				EC3C7ADB2BE880E20016C611 /* SignUpLoginController.swift */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -238,9 +258,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC2C3F9F2BDCD5EC00EFCFD4 /* TravelApp */ = {
+		EC2C3F9F2BDCD5EC00EFCFD4 /* notriphoiba */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC2C3FCD2BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelApp" */;
+			buildConfigurationList = EC2C3FCD2BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoiba" */;
 			buildPhases = (
 				EC2C3F9C2BDCD5EC00EFCFD4 /* Sources */,
 				EC2C3F9D2BDCD5EC00EFCFD4 /* Frameworks */,
@@ -250,14 +270,14 @@
 			);
 			dependencies = (
 			);
-			name = TravelApp;
+			name = notriphoiba;
 			productName = TravelApp;
-			productReference = EC2C3FA02BDCD5EC00EFCFD4 /* TravelApp.app */;
+			productReference = EC2C3FA02BDCD5EC00EFCFD4 /* notriphoiba.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EC2C3FB82BDCD5EE00EFCFD4 /* TravelAppTests */ = {
+		EC2C3FB82BDCD5EE00EFCFD4 /* notriphoibaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC2C3FD02BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelAppTests" */;
+			buildConfigurationList = EC2C3FD02BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoibaTests" */;
 			buildPhases = (
 				EC2C3FB52BDCD5EE00EFCFD4 /* Sources */,
 				EC2C3FB62BDCD5EE00EFCFD4 /* Frameworks */,
@@ -268,14 +288,14 @@
 			dependencies = (
 				EC2C3FBB2BDCD5EE00EFCFD4 /* PBXTargetDependency */,
 			);
-			name = TravelAppTests;
+			name = notriphoibaTests;
 			productName = TravelAppTests;
-			productReference = EC2C3FB92BDCD5EE00EFCFD4 /* TravelAppTests.xctest */;
+			productReference = EC2C3FB92BDCD5EE00EFCFD4 /* notriphoibaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EC2C3FC22BDCD5EE00EFCFD4 /* TravelAppUITests */ = {
+		EC2C3FC22BDCD5EE00EFCFD4 /* notriphoibaUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC2C3FD32BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelAppUITests" */;
+			buildConfigurationList = EC2C3FD32BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoibaUITests" */;
 			buildPhases = (
 				EC2C3FBF2BDCD5EE00EFCFD4 /* Sources */,
 				EC2C3FC02BDCD5EE00EFCFD4 /* Frameworks */,
@@ -286,9 +306,9 @@
 			dependencies = (
 				EC2C3FC52BDCD5EE00EFCFD4 /* PBXTargetDependency */,
 			);
-			name = TravelAppUITests;
+			name = notriphoibaUITests;
 			productName = TravelAppUITests;
-			productReference = EC2C3FC32BDCD5EE00EFCFD4 /* TravelAppUITests.xctest */;
+			productReference = EC2C3FC32BDCD5EE00EFCFD4 /* notriphoibaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -314,7 +334,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC2C3F9B2BDCD5EC00EFCFD4 /* Build configuration list for PBXProject "TravelApp" */;
+			buildConfigurationList = EC2C3F9B2BDCD5EC00EFCFD4 /* Build configuration list for PBXProject "notriphoiba" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -327,9 +347,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC2C3F9F2BDCD5EC00EFCFD4 /* TravelApp */,
-				EC2C3FB82BDCD5EE00EFCFD4 /* TravelAppTests */,
-				EC2C3FC22BDCD5EE00EFCFD4 /* TravelAppUITests */,
+				EC2C3F9F2BDCD5EC00EFCFD4 /* notriphoiba */,
+				EC2C3FB82BDCD5EE00EFCFD4 /* notriphoibaTests */,
+				EC2C3FC22BDCD5EE00EFCFD4 /* notriphoibaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -369,12 +389,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC2C3FDF2BDD1D9500EFCFD4 /* OnboardingSlideItem.swift in Sources */,
+				EC3C7ADC2BE880E20016C611 /* SignUpLoginController.swift in Sources */,
+				EC3C7AE52BEB28CA0016C611 /* CustomLabel.swift in Sources */,
 				EC2C3FEE2BDD3DE300EFCFD4 /* UIView+Extension.swift in Sources */,
 				EC2C3FAE2BDCD5EC00EFCFD4 /* TravelApp.xcdatamodeld in Sources */,
+				EC3C7AE32BEB26CC0016C611 /* CustomButton.swift in Sources */,
 				EC2C3FEA2BDD3C3200EFCFD4 /* OnboardingViewController.swift in Sources */,
 				EC2C3FA42BDCD5EC00EFCFD4 /* AppDelegate.swift in Sources */,
 				EC2C3FF02BDE76A400EFCFD4 /* OnboardingCollectionViewCell.swift in Sources */,
 				EC2C3FA62BDCD5EC00EFCFD4 /* SceneDelegate.swift in Sources */,
+				EC3C7AE12BEA2DCA0016C611 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,12 +424,12 @@
 /* Begin PBXTargetDependency section */
 		EC2C3FBB2BDCD5EE00EFCFD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EC2C3F9F2BDCD5EC00EFCFD4 /* TravelApp */;
+			target = EC2C3F9F2BDCD5EC00EFCFD4 /* notriphoiba */;
 			targetProxy = EC2C3FBA2BDCD5EE00EFCFD4 /* PBXContainerItemProxy */;
 		};
 		EC2C3FC52BDCD5EE00EFCFD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EC2C3F9F2BDCD5EC00EFCFD4 /* TravelApp */;
+			target = EC2C3F9F2BDCD5EC00EFCFD4 /* notriphoiba */;
 			targetProxy = EC2C3FC42BDCD5EE00EFCFD4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -613,7 +637,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravelApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/notriphoiba.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/notriphoiba";
 			};
 			name = Debug;
 		};
@@ -633,7 +657,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravelApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/notriphoiba.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/notriphoiba";
 			};
 			name = Release;
 		};
@@ -676,7 +700,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC2C3F9B2BDCD5EC00EFCFD4 /* Build configuration list for PBXProject "TravelApp" */ = {
+		EC2C3F9B2BDCD5EC00EFCFD4 /* Build configuration list for PBXProject "notriphoiba" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC2C3FCB2BDCD5EE00EFCFD4 /* Debug */,
@@ -685,7 +709,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC2C3FCD2BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelApp" */ = {
+		EC2C3FCD2BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoiba" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC2C3FCE2BDCD5EE00EFCFD4 /* Debug */,
@@ -694,7 +718,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC2C3FD02BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelAppTests" */ = {
+		EC2C3FD02BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoibaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC2C3FD12BDCD5EE00EFCFD4 /* Debug */,
@@ -703,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC2C3FD32BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelAppUITests" */ = {
+		EC2C3FD32BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoibaUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC2C3FD42BDCD5EE00EFCFD4 /* Debug */,

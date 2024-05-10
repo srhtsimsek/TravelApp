@@ -17,9 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        window?.rootViewController = OnboardingViewController()
+        
+        if UserDefaults.standard.bool(forKey: "isLaunchedBefore") {
+            window?.rootViewController = SignUpLoginController()
+        } else {
+            window?.rootViewController = OnboardingViewController()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
