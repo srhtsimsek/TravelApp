@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpLoginController: UIViewController {
+class SignInViewController: UIViewController {
     
     //MARK: View
     private lazy var logoImageView: UIImageView = {
@@ -19,9 +19,11 @@ class SignUpLoginController: UIViewController {
     }()
     
     private lazy var titleLabel = CustomLabel(title: "Sign In", font: .semibold, fontSize: .big)
-    private lazy var descriptionLabel = CustomLabel(title: "Let's get started", font: .regular, fontSize: .medium)
-    private lazy var userNameTextField = CustomTextField(customfieldType: .username)
+    private lazy var descriptionLabel = CustomLabel(title: "are you ready for an adventure?", font: .regular, fontSize: .medium)
+    
+    private lazy var emailTextField = CustomTextField(customfieldType: .email)
     private lazy var passwordTextField = CustomTextField(customfieldType: .password)
+    
     private lazy var signInButton = CustomButton(title: "Sign In", fontSize: .big, hasBackground: true)
     private lazy var newUserButton = CustomButton(title: "New User? Create Account", fontSize: .medium)
     private lazy var forgotPasswordButton = CustomButton(title: "I Forgot My Password", fontSize: .small)
@@ -61,6 +63,29 @@ class SignUpLoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        addTarget()
+    }
+    
+    //MARK: Add Target
+    private func addTarget(){
+        signInButton.addTarget(self, action: #selector(clickedSignInButton), for: .touchUpInside)
+        newUserButton.addTarget(self, action: #selector(clickedNewUserButton), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(clickedForgotPasswordButton), for: .touchUpInside)
+    }
+    
+    //MARK: #selector
+    @objc private func clickedSignInButton() {
+        print("clicked sign in button")
+    }
+    @objc private func clickedNewUserButton() {
+        print("clicked new user button")
+        let vc = SignUpViewController()
+        self.present(vc, animated: true)
+    }
+    @objc private func clickedForgotPasswordButton() {
+        print("clicked forgot button")
+        let vc = ForgotPasswordViewController()
+        self.present(vc, animated: true)
     }
     
     //MARK: Config UI
@@ -83,7 +108,7 @@ class SignUpLoginController: UIViewController {
     }
     
     private func configLogInTextFieldsStackView() {
-        loginTextFieldsStackView.addArrangedSubview(userNameTextField)
+        loginTextFieldsStackView.addArrangedSubview(emailTextField)
         loginTextFieldsStackView.addArrangedSubview(passwordTextField)
         loginTextFieldsStackView.addArrangedSubview(signInButton)
         loginTextFieldsStackView.addArrangedSubview(newUserButton)
@@ -122,14 +147,14 @@ class SignUpLoginController: UIViewController {
     }
     
     private func configTextFields() {
-        userNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
-        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
-        userNameTextField.anchor(top: loginTextFieldsStackView.topAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 10, height: 55)
-        passwordTextField.anchor(top: userNameTextField.bottomAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingRight: 10, height: 55)
+        emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: emailTextField.frame.size.height))
+        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: emailTextField.frame.size.height))
+        emailTextField.anchor(top: loginTextFieldsStackView.topAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 10, height: 55)
+        passwordTextField.anchor(top: emailTextField.bottomAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingRight: 10, height: 55)
     }
     
     private func configLoginButton() {
-//        signInButton.backgroundColor = .secondarySystemBackground
+        signInButton.adjustsImageWhenHighlighted = true
         signInButton.anchor(top: passwordTextField.bottomAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingRight: 20, height: 55)
     }
 }

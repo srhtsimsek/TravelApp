@@ -22,10 +22,13 @@
 		EC2C40092BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC2C3FF42BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf */; };
 		EC2C40152BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC2C40002BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf */; };
 		EC2C40172BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC2C40022BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf */; };
-		EC3C7ADC2BE880E20016C611 /* SignUpLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7ADB2BE880E20016C611 /* SignUpLoginController.swift */; };
+		EC3C7ADC2BE880E20016C611 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7ADB2BE880E20016C611 /* SignInViewController.swift */; };
 		EC3C7AE12BEA2DCA0016C611 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7AE02BEA2DCA0016C611 /* CustomTextField.swift */; };
 		EC3C7AE32BEB26CC0016C611 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7AE22BEB26CC0016C611 /* CustomButton.swift */; };
 		EC3C7AE52BEB28CA0016C611 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7AE42BEB28CA0016C611 /* CustomLabel.swift */; };
+		EC662C2D2BEDDE13004E51BE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC662C2C2BEDDE13004E51BE /* SignUpViewController.swift */; };
+		EC662C2F2BEDDFC9004E51BE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC662C2E2BEDDFC9004E51BE /* ForgotPasswordViewController.swift */; };
+		EC662C312BEE086F004E51BE /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC662C302BEE086F004E51BE /* TermsAndConditionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +68,13 @@
 		EC2C3FF42BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kastelov  Axiforma Bold.otf"; sourceTree = "<group>"; };
 		EC2C40002BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kastelov  Axiforma Regular.otf"; sourceTree = "<group>"; };
 		EC2C40022BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kastelov  Axiforma SemiBold.otf"; sourceTree = "<group>"; };
-		EC3C7ADB2BE880E20016C611 /* SignUpLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLoginController.swift; sourceTree = "<group>"; };
+		EC3C7ADB2BE880E20016C611 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		EC3C7AE02BEA2DCA0016C611 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EC3C7AE22BEB26CC0016C611 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		EC3C7AE42BEB28CA0016C611 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		EC662C2C2BEDDE13004E51BE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		EC662C2E2BEDDFC9004E51BE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		EC662C302BEE086F004E51BE /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,7 +256,10 @@
 		EC6CD5312BE1109A0000D972 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				EC3C7ADB2BE880E20016C611 /* SignUpLoginController.swift */,
+				EC3C7ADB2BE880E20016C611 /* SignInViewController.swift */,
+				EC662C2C2BEDDE13004E51BE /* SignUpViewController.swift */,
+				EC662C2E2BEDDFC9004E51BE /* ForgotPasswordViewController.swift */,
+				EC662C302BEE086F004E51BE /* TermsAndConditionsViewController.swift */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -388,8 +397,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC662C2D2BEDDE13004E51BE /* SignUpViewController.swift in Sources */,
 				EC2C3FDF2BDD1D9500EFCFD4 /* OnboardingSlideItem.swift in Sources */,
-				EC3C7ADC2BE880E20016C611 /* SignUpLoginController.swift in Sources */,
+				EC3C7ADC2BE880E20016C611 /* SignInViewController.swift in Sources */,
 				EC3C7AE52BEB28CA0016C611 /* CustomLabel.swift in Sources */,
 				EC2C3FEE2BDD3DE300EFCFD4 /* UIView+Extension.swift in Sources */,
 				EC2C3FAE2BDCD5EC00EFCFD4 /* TravelApp.xcdatamodeld in Sources */,
@@ -397,7 +407,9 @@
 				EC2C3FEA2BDD3C3200EFCFD4 /* OnboardingViewController.swift in Sources */,
 				EC2C3FA42BDCD5EC00EFCFD4 /* AppDelegate.swift in Sources */,
 				EC2C3FF02BDE76A400EFCFD4 /* OnboardingCollectionViewCell.swift in Sources */,
+				EC662C2F2BEDDFC9004E51BE /* ForgotPasswordViewController.swift in Sources */,
 				EC2C3FA62BDCD5EC00EFCFD4 /* SceneDelegate.swift in Sources */,
+				EC662C312BEE086F004E51BE /* TermsAndConditionsViewController.swift in Sources */,
 				EC3C7AE12BEA2DCA0016C611 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

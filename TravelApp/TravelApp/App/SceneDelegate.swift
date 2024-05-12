@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         if UserDefaults.standard.bool(forKey: "isLaunchedBefore") {
-            window?.rootViewController = SignUpLoginController()
+            window?.rootViewController = SignInViewController()
         } else {
             window?.rootViewController = OnboardingViewController()
         }

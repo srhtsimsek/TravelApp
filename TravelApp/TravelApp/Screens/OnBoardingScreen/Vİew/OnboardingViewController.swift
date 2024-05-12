@@ -104,7 +104,7 @@ final class OnboardingViewController: UIViewController {
     
     //MARK: Helpers
     private func redirectToLogin(){
-        let loginScreenViewController = SignUpLoginController()
+        let loginScreenViewController = SignInViewController()
         loginScreenViewController.modalPresentationStyle = .fullScreen
         self.present(loginScreenViewController, animated: true)
         configFirstLaunch()
