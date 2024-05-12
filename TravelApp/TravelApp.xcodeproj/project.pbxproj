@@ -29,6 +29,12 @@
 		EC662C2D2BEDDE13004E51BE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC662C2C2BEDDE13004E51BE /* SignUpViewController.swift */; };
 		EC662C2F2BEDDFC9004E51BE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC662C2E2BEDDFC9004E51BE /* ForgotPasswordViewController.swift */; };
 		EC662C312BEE086F004E51BE /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC662C302BEE086F004E51BE /* TermsAndConditionsViewController.swift */; };
+		EC803F642BF09E2800E51BCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC803F632BF09E2800E51BCE /* GoogleService-Info.plist */; };
+		EC803F682BF0A0CB00E51BCE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EC803F672BF0A0CB00E51BCE /* FirebaseAnalytics */; };
+		EC803F6A2BF0A0CB00E51BCE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EC803F692BF0A0CB00E51BCE /* FirebaseAuth */; };
+		EC803F6C2BF0A0CB00E51BCE /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EC803F6B2BF0A0CB00E51BCE /* FirebaseDatabase */; };
+		EC803F6E2BF0A0CB00E51BCE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EC803F6D2BF0A0CB00E51BCE /* FirebaseFirestore */; };
+		EC803F702BF0A0CB00E51BCE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EC803F6F2BF0A0CB00E51BCE /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,16 +55,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EC2C3FA02BDCD5EC00EFCFD4 /* notriphoiba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notriphoiba.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2C3FA02BDCD5EC00EFCFD4 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2C3FA32BDCD5EC00EFCFD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC2C3FA52BDCD5EC00EFCFD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EC2C3FAD2BDCD5EC00EFCFD4 /* TravelApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelApp.xcdatamodel; sourceTree = "<group>"; };
 		EC2C3FAF2BDCD5ED00EFCFD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC2C3FB22BDCD5ED00EFCFD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC2C3FB42BDCD5ED00EFCFD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC2C3FB92BDCD5EE00EFCFD4 /* notriphoibaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = notriphoibaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2C3FB92BDCD5EE00EFCFD4 /* TravelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2C3FBD2BDCD5EE00EFCFD4 /* TravelAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppTests.swift; sourceTree = "<group>"; };
-		EC2C3FC32BDCD5EE00EFCFD4 /* notriphoibaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = notriphoibaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2C3FC32BDCD5EE00EFCFD4 /* TravelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2C3FC72BDCD5EE00EFCFD4 /* TravelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITests.swift; sourceTree = "<group>"; };
 		EC2C3FC92BDCD5EE00EFCFD4 /* TravelAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EC2C3FDE2BDD1D9500EFCFD4 /* OnboardingSlideItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlideItem.swift; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 		EC662C2C2BEDDE13004E51BE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EC662C2E2BEDDFC9004E51BE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		EC662C302BEE086F004E51BE /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
+		EC803F632BF09E2800E51BCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +89,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC803F6C2BF0A0CB00E51BCE /* FirebaseDatabase in Frameworks */,
+				EC803F6E2BF0A0CB00E51BCE /* FirebaseFirestore in Frameworks */,
+				EC803F682BF0A0CB00E51BCE /* FirebaseAnalytics in Frameworks */,
+				EC803F702BF0A0CB00E51BCE /* FirebaseStorage in Frameworks */,
+				EC803F6A2BF0A0CB00E51BCE /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,15 +121,16 @@
 				EC2C3FBC2BDCD5EE00EFCFD4 /* TravelAppTests */,
 				EC2C3FC62BDCD5EE00EFCFD4 /* TravelAppUITests */,
 				EC2C3FA12BDCD5EC00EFCFD4 /* Products */,
+				EC803F662BF0A0CB00E51BCE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		EC2C3FA12BDCD5EC00EFCFD4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC2C3FA02BDCD5EC00EFCFD4 /* notriphoiba.app */,
-				EC2C3FB92BDCD5EE00EFCFD4 /* notriphoibaTests.xctest */,
-				EC2C3FC32BDCD5EE00EFCFD4 /* notriphoibaUITests.xctest */,
+				EC2C3FA02BDCD5EC00EFCFD4 /* TravelApp.app */,
+				EC2C3FB92BDCD5EE00EFCFD4 /* TravelAppTests.xctest */,
+				EC2C3FC32BDCD5EE00EFCFD4 /* TravelAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +177,7 @@
 		EC2C3FD72BDCE33E00EFCFD4 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EC803F632BF09E2800E51BCE /* GoogleService-Info.plist */,
 				EC2C3FB42BDCD5ED00EFCFD4 /* Info.plist */,
 				EC2C3FA32BDCD5EC00EFCFD4 /* AppDelegate.swift */,
 				EC2C3FA52BDCD5EC00EFCFD4 /* SceneDelegate.swift */,
@@ -264,12 +278,19 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		EC803F662BF0A0CB00E51BCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC2C3F9F2BDCD5EC00EFCFD4 /* notriphoiba */ = {
+		EC2C3F9F2BDCD5EC00EFCFD4 /* TravelApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC2C3FCD2BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoiba" */;
+			buildConfigurationList = EC2C3FCD2BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelApp" */;
 			buildPhases = (
 				EC2C3F9C2BDCD5EC00EFCFD4 /* Sources */,
 				EC2C3F9D2BDCD5EC00EFCFD4 /* Frameworks */,
@@ -279,14 +300,21 @@
 			);
 			dependencies = (
 			);
-			name = notriphoiba;
+			name = TravelApp;
+			packageProductDependencies = (
+				EC803F672BF0A0CB00E51BCE /* FirebaseAnalytics */,
+				EC803F692BF0A0CB00E51BCE /* FirebaseAuth */,
+				EC803F6B2BF0A0CB00E51BCE /* FirebaseDatabase */,
+				EC803F6D2BF0A0CB00E51BCE /* FirebaseFirestore */,
+				EC803F6F2BF0A0CB00E51BCE /* FirebaseStorage */,
+			);
 			productName = TravelApp;
-			productReference = EC2C3FA02BDCD5EC00EFCFD4 /* notriphoiba.app */;
+			productReference = EC2C3FA02BDCD5EC00EFCFD4 /* TravelApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EC2C3FB82BDCD5EE00EFCFD4 /* notriphoibaTests */ = {
+		EC2C3FB82BDCD5EE00EFCFD4 /* TravelAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC2C3FD02BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoibaTests" */;
+			buildConfigurationList = EC2C3FD02BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelAppTests" */;
 			buildPhases = (
 				EC2C3FB52BDCD5EE00EFCFD4 /* Sources */,
 				EC2C3FB62BDCD5EE00EFCFD4 /* Frameworks */,
@@ -297,14 +325,14 @@
 			dependencies = (
 				EC2C3FBB2BDCD5EE00EFCFD4 /* PBXTargetDependency */,
 			);
-			name = notriphoibaTests;
+			name = TravelAppTests;
 			productName = TravelAppTests;
-			productReference = EC2C3FB92BDCD5EE00EFCFD4 /* notriphoibaTests.xctest */;
+			productReference = EC2C3FB92BDCD5EE00EFCFD4 /* TravelAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EC2C3FC22BDCD5EE00EFCFD4 /* notriphoibaUITests */ = {
+		EC2C3FC22BDCD5EE00EFCFD4 /* TravelAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC2C3FD32BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoibaUITests" */;
+			buildConfigurationList = EC2C3FD32BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelAppUITests" */;
 			buildPhases = (
 				EC2C3FBF2BDCD5EE00EFCFD4 /* Sources */,
 				EC2C3FC02BDCD5EE00EFCFD4 /* Frameworks */,
@@ -315,9 +343,9 @@
 			dependencies = (
 				EC2C3FC52BDCD5EE00EFCFD4 /* PBXTargetDependency */,
 			);
-			name = notriphoibaUITests;
+			name = TravelAppUITests;
 			productName = TravelAppUITests;
-			productReference = EC2C3FC32BDCD5EE00EFCFD4 /* notriphoibaUITests.xctest */;
+			productReference = EC2C3FC32BDCD5EE00EFCFD4 /* TravelAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -343,7 +371,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC2C3F9B2BDCD5EC00EFCFD4 /* Build configuration list for PBXProject "notriphoiba" */;
+			buildConfigurationList = EC2C3F9B2BDCD5EC00EFCFD4 /* Build configuration list for PBXProject "TravelApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -352,13 +380,16 @@
 				Base,
 			);
 			mainGroup = EC2C3F972BDCD5EC00EFCFD4;
+			packageReferences = (
+				EC803F652BF09FEE00E51BCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = EC2C3FA12BDCD5EC00EFCFD4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC2C3F9F2BDCD5EC00EFCFD4 /* notriphoiba */,
-				EC2C3FB82BDCD5EE00EFCFD4 /* notriphoibaTests */,
-				EC2C3FC22BDCD5EE00EFCFD4 /* notriphoibaUITests */,
+				EC2C3F9F2BDCD5EC00EFCFD4 /* TravelApp */,
+				EC2C3FB82BDCD5EE00EFCFD4 /* TravelAppTests */,
+				EC2C3FC22BDCD5EE00EFCFD4 /* TravelAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC803F642BF09E2800E51BCE /* GoogleService-Info.plist in Resources */,
 				EC2C40152BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf in Resources */,
 				EC2C40172BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf in Resources */,
 				EC2C3FB02BDCD5ED00EFCFD4 /* Assets.xcassets in Resources */,
@@ -436,12 +468,12 @@
 /* Begin PBXTargetDependency section */
 		EC2C3FBB2BDCD5EE00EFCFD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EC2C3F9F2BDCD5EC00EFCFD4 /* notriphoiba */;
+			target = EC2C3F9F2BDCD5EC00EFCFD4 /* TravelApp */;
 			targetProxy = EC2C3FBA2BDCD5EE00EFCFD4 /* PBXContainerItemProxy */;
 		};
 		EC2C3FC52BDCD5EE00EFCFD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EC2C3F9F2BDCD5EC00EFCFD4 /* notriphoiba */;
+			target = EC2C3F9F2BDCD5EC00EFCFD4 /* TravelApp */;
 			targetProxy = EC2C3FC42BDCD5EE00EFCFD4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -587,6 +619,7 @@
 				DEVELOPMENT_TEAM = 2QAS44S4GM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelApp/App/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -615,6 +648,7 @@
 				DEVELOPMENT_TEAM = 2QAS44S4GM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelApp/App/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -649,7 +683,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/notriphoiba.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/notriphoiba";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravelApp";
 			};
 			name = Debug;
 		};
@@ -669,7 +703,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/notriphoiba.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/notriphoiba";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravelApp";
 			};
 			name = Release;
 		};
@@ -712,7 +746,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC2C3F9B2BDCD5EC00EFCFD4 /* Build configuration list for PBXProject "notriphoiba" */ = {
+		EC2C3F9B2BDCD5EC00EFCFD4 /* Build configuration list for PBXProject "TravelApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC2C3FCB2BDCD5EE00EFCFD4 /* Debug */,
@@ -721,7 +755,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC2C3FCD2BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoiba" */ = {
+		EC2C3FCD2BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC2C3FCE2BDCD5EE00EFCFD4 /* Debug */,
@@ -730,7 +764,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC2C3FD02BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoibaTests" */ = {
+		EC2C3FD02BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC2C3FD12BDCD5EE00EFCFD4 /* Debug */,
@@ -739,7 +773,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC2C3FD32BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "notriphoibaUITests" */ = {
+		EC2C3FD32BDCD5EE00EFCFD4 /* Build configuration list for PBXNativeTarget "TravelAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC2C3FD42BDCD5EE00EFCFD4 /* Debug */,
@@ -749,6 +783,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC803F652BF09FEE00E51BCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.25.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC803F672BF0A0CB00E51BCE /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC803F652BF09FEE00E51BCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EC803F692BF0A0CB00E51BCE /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC803F652BF09FEE00E51BCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EC803F6B2BF0A0CB00E51BCE /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC803F652BF09FEE00E51BCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		EC803F6D2BF0A0CB00E51BCE /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC803F652BF09FEE00E51BCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		EC803F6F2BF0A0CB00E51BCE /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC803F652BF09FEE00E51BCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		EC2C3FAC2BDCD5EC00EFCFD4 /* TravelApp.xcdatamodeld */ = {
