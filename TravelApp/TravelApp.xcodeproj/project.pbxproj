@@ -114,15 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC108EEA2BF5C877006AB100 /* TravelAppgnro */ = {
-			isa = PBXGroup;
-			children = (
-				EC2C3FEB2BDD3DBB00EFCFD4 /* Extension */,
-				EC2C3FD82BDCE4B000EFCFD4 /* Screens */,
-			);
-			name = TravelAppgnro;
-			sourceTree = "<group>";
-		};
 		EC2C3F972BDCD5EC00EFCFD4 = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +138,8 @@
 		EC2C3FA22BDCD5EC00EFCFD4 /* TravelApp */ = {
 			isa = PBXGroup;
 			children = (
-				EC108EEA2BF5C877006AB100 /* TravelAppgnro */,
+				EC2C3FEB2BDD3DBB00EFCFD4 /* Extension */,
+				EC2C3FD82BDCE4B000EFCFD4 /* Screens */,
 				EC2C3FD72BDCE33E00EFCFD4 /* App */,
 				EC2C3FD62BDCE32800EFCFD4 /* Resources */,
 				EC2C3FAC2BDCD5EC00EFCFD4 /* TravelApp.xcdatamodeld */,
