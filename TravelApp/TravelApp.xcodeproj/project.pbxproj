@@ -270,6 +270,7 @@
 		EC6CD5312BE1109A0000D972 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				EC803F712BF10E6C00E51BCE /* View */,
 				EC3C7ADB2BE880E20016C611 /* SignInViewController.swift */,
 				EC662C2C2BEDDE13004E51BE /* SignUpViewController.swift */,
 				EC662C2E2BEDDFC9004E51BE /* ForgotPasswordViewController.swift */,
@@ -283,6 +284,13 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC803F712BF10E6C00E51BCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

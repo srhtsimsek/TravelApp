@@ -21,6 +21,7 @@ class SignUpViewController: UIViewController {
     private lazy var titleLabel = CustomLabel(title: "Sign Up", font: .semibold, fontSize: .big)
     private lazy var descriptionLabel = CustomLabel(title: "let's get started", font: .regular, fontSize: .medium)
     
+    private lazy var fullNameTextField = CustomTextField(customfieldType: .fullname)
     private lazy var userNameTextField = CustomTextField(customfieldType: .username)
     private lazy var emailTextField = CustomTextField(customfieldType: .email)
     private lazy var passwordTextField = CustomTextField(customfieldType: .password)
@@ -32,7 +33,7 @@ class SignUpViewController: UIViewController {
         let attributedString = NSMutableAttributedString(string: "Kullanım Şartlarını ve Gizlilik Politikasını kabul ediyorum")
         attributedString.addAttribute(.link, value: "terms://termsAndConditions", range: (attributedString.string as NSString).range(of: "Kullanım Şartlarını"))
         attributedString.addAttribute(.link, value: "privacy://privacyPolicy", range: (attributedString.string as NSString).range(of: "Gizlilik Politikasını"))
-            
+        
         let textView = UITextView()
         textView.attributedText = attributedString
         textView.linkTextAttributes = [.foregroundColor: UIColor.systemBlue]
@@ -49,6 +50,7 @@ class SignUpViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
+        stackView.distribution = .fillEqually
         stackView.spacing = 20
         stackView.backgroundColor = .white
         return stackView
@@ -57,7 +59,7 @@ class SignUpViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = 10
+        stackView.spacing = -30
         stackView.backgroundColor = .white
         return stackView
     }()
@@ -97,7 +99,6 @@ class SignUpViewController: UIViewController {
     //MARK: #selector
     @objc private func clickedSignUpButton() {
         print("clicked sign up button")
-
     }
     @objc private func clickedSignInButton() {
         print("clicked sign in button")
@@ -126,12 +127,12 @@ class SignUpViewController: UIViewController {
     }
     
     private func configLogInTextFieldsStackView() {
+        loginTextFieldsStackView.addArrangedSubview(fullNameTextField)
         loginTextFieldsStackView.addArrangedSubview(userNameTextField)
         loginTextFieldsStackView.addArrangedSubview(emailTextField)
         loginTextFieldsStackView.addArrangedSubview(passwordTextField)
         loginTextFieldsStackView.addArrangedSubview(signUpButton)
         loginTextFieldsStackView.addArrangedSubview(signInButton)
-//        loginTextFieldsStackView.addArrangedSubview(forgotPasswordButton)
     }
     
     private func configLogInElementsStackView() {
@@ -144,10 +145,13 @@ class SignUpViewController: UIViewController {
     private func configStackViews(){
         configHeadStackView()
         configLogInTextFieldsStackView()
+        titleLabel.anchor(height: 25)
+        descriptionLabel.anchor(height: 25)
         configLogInElementsStackView()
         
-        headStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 30, paddingLeft: 40, paddingRight: 40)
-        loginTextFieldsStackView.anchor(top: headStackView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 30, paddingRight: 30)
+        headStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 40, paddingRight: 40)
+        labelStackView.anchor(top: logoImageView.bottomAnchor, left: headStackView.leftAnchor, right: headStackView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingRight: 0)
+        loginTextFieldsStackView.anchor(top: headStackView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 30, paddingRight: 30)
         loginButtonsStackView.anchor(top: loginTextFieldsStackView.bottomAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 30, paddingBottom: 0, paddingRight: 30 )
     }
     
@@ -162,16 +166,18 @@ class SignUpViewController: UIViewController {
         logoImageView.clipsToBounds = true
         logoImageView.layer.borderWidth = 2.0
         logoImageView.layer.borderColor = CGColor(red: 0.20, green: 0.93, blue: 0.56, alpha: 1.00)
-        logoImageView.frame.size = CGSize(width: 256, height: 256)
+        logoImageView.anchor(widght: 100, height: 100)
+        logoImageView.frame.size = CGSize(width: 100, height: 100)
         logoImageView.layer.cornerRadius = logoImageView.frame.height / 2
     }
     
     private func configTextFields() {
-        userNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
-        emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
-        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
-        
-        userNameTextField.anchor(top: loginTextFieldsStackView.topAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 10, height: 55)
+//        userNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
+//        emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
+//        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
+//        
+        fullNameTextField.anchor(top: loginTextFieldsStackView.topAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 10, height: 55)
+        userNameTextField.anchor(top: fullNameTextField.bottomAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingRight: 10, height: 55)
         emailTextField.anchor(top: userNameTextField.bottomAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingRight: 10, height: 55)
         passwordTextField.anchor(top: emailTextField.bottomAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingRight: 10, height: 55)
     }

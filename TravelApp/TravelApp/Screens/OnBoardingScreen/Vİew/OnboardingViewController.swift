@@ -70,7 +70,7 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-    
+
     //MARK: Button Funcs
     @objc func prevButtonClicked() {
         let prevIndex = max(pageControl.currentPage - 1, 0)

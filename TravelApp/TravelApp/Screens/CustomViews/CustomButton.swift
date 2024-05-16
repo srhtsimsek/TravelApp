@@ -13,19 +13,27 @@ class CustomButton: UIButton {
         case medium
         case big
     }
-    
     init(title: String, fontSize: FontSize, hasBackground: Bool = false){
         super.init(frame: .zero)
-        
+
         self.setTitle(title, for: .normal)
         self.layer.cornerRadius = 12
         
         self.backgroundColor = hasBackground ? .systemBlue : .clear
-    
+        
         let titleColor: UIColor = hasBackground ? .white : .systemBlue
         self.setTitleColor(titleColor, for: .normal)
-        
-        switch fontSize {
+        self.setTitleColor(.lightText, for: .highlighted)
+        configFontsize(size: fontSize)
+
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configFontsize(size: FontSize) {
+        switch size {
         case .big:
             self.titleLabel?.font = .systemFont(ofSize: 22, weight: .bold)
             
@@ -35,10 +43,5 @@ class CustomButton: UIButton {
         case .small:
             self.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
         }
-
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

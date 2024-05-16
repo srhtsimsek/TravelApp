@@ -10,6 +10,7 @@ import UIKit
 class CustomTextField: UITextField {
 
     enum CustomKeyboardType {
+        case fullname
         case username
         case email
         case password
@@ -32,15 +33,16 @@ class CustomTextField: UITextField {
         self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: self.frame.size.height))
         
         switch customfieldType {
+        case .fullname:
+            self.placeholder = "full name"
         case .username:
-            self.placeholder = "Username"
+            self.placeholder = "username"
         case .email:
-            self.placeholder = "example@hello.com"
+            self.placeholder = "email"
             self.keyboardType = .emailAddress
             self.textContentType = .emailAddress
-            
         case .password:
-            self.placeholder = "Password"
+            self.placeholder = "password"
             self.textContentType = .oneTimeCode
             self.isSecureTextEntry = true
         }
