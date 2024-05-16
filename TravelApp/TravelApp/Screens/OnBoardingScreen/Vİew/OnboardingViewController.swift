@@ -113,7 +113,6 @@ final class OnboardingViewController: UIViewController {
         UserDefaults.standard.set(true, forKey: "isLaunchedBefore")
     }
     
-    
     //MARK: Config UI
     private func setupUI(){
         addUIElements()
