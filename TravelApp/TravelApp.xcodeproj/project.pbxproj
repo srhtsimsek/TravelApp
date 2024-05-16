@@ -19,9 +19,6 @@
 		EC2C3FEA2BDD3C3200EFCFD4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2C3FE92BDD3C3200EFCFD4 /* OnboardingViewController.swift */; };
 		EC2C3FEE2BDD3DE300EFCFD4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2C3FED2BDD3DE300EFCFD4 /* UIView+Extension.swift */; };
 		EC2C3FF02BDE76A400EFCFD4 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2C3FEF2BDE76A400EFCFD4 /* OnboardingCollectionViewCell.swift */; };
-		EC2C40092BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC2C3FF42BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf */; };
-		EC2C40152BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC2C40002BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf */; };
-		EC2C40172BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC2C40022BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf */; };
 		EC3C7ADC2BE880E20016C611 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7ADB2BE880E20016C611 /* SignInViewController.swift */; };
 		EC3C7AE12BEA2DCA0016C611 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7AE02BEA2DCA0016C611 /* CustomTextField.swift */; };
 		EC3C7AE32BEB26CC0016C611 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C7AE22BEB26CC0016C611 /* CustomButton.swift */; };
@@ -71,9 +68,6 @@
 		EC2C3FE92BDD3C3200EFCFD4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		EC2C3FED2BDD3DE300EFCFD4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		EC2C3FEF2BDE76A400EFCFD4 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		EC2C3FF42BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kastelov  Axiforma Bold.otf"; sourceTree = "<group>"; };
-		EC2C40002BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kastelov  Axiforma Regular.otf"; sourceTree = "<group>"; };
-		EC2C40022BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kastelov  Axiforma SemiBold.otf"; sourceTree = "<group>"; };
 		EC3C7ADB2BE880E20016C611 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		EC3C7AE02BEA2DCA0016C611 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EC3C7AE22BEB26CC0016C611 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -167,7 +161,6 @@
 		EC2C3FD62BDCE32800EFCFD4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EC2C40052BDE913900EFCFD4 /* axiforma */,
 				EC2C3FAF2BDCD5ED00EFCFD4 /* Assets.xcassets */,
 				EC2C3FB12BDCD5ED00EFCFD4 /* LaunchScreen.storyboard */,
 			);
@@ -236,17 +229,6 @@
 				EC2C3FED2BDD3DE300EFCFD4 /* UIView+Extension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		EC2C40052BDE913900EFCFD4 /* axiforma */ = {
-			isa = PBXGroup;
-			children = (
-				EC2C3FF42BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf */,
-				EC2C40002BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf */,
-				EC2C40022BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf */,
-			);
-			name = axiforma;
-			path = ../../../../../Downloads/axiforma;
 			sourceTree = "<group>";
 		};
 		EC3C7ADF2BEA2D8F0016C611 /* CustomViews */ = {
@@ -408,10 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC803F642BF09E2800E51BCE /* GoogleService-Info.plist in Resources */,
-				EC2C40152BDE913900EFCFD4 /* Kastelov  Axiforma Regular.otf in Resources */,
-				EC2C40172BDE913900EFCFD4 /* Kastelov  Axiforma SemiBold.otf in Resources */,
 				EC2C3FB02BDCD5ED00EFCFD4 /* Assets.xcassets in Resources */,
-				EC2C40092BDE913900EFCFD4 /* Kastelov  Axiforma Bold.otf in Resources */,
 				EC2C3FB32BDCD5ED00EFCFD4 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -64,6 +64,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         addTarget()
+        print("s")
     }
     
     //MARK: Add Target
