@@ -19,21 +19,21 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
     
     lazy var cellImageView: UIImageView = {
         let imageview = UIImageView()
-        imageview.contentMode = .scaleToFill
+        imageview.contentMode = .scaleAspectFill
         return imageview
     }()
     lazy var headLineLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.textColor = .lightFromColorSet
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .white
         return label
     }()
     lazy var subLineLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 3
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        label.textColor = .lightFromColorSet
+        label.font = .systemFont(ofSize: 14, weight: .medium)
+        label.textColor = .white.withAlphaComponent(0.85)
         return label
     }()
     lazy var descriptionStackView: UIStackView = {
@@ -57,6 +57,7 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
 //        headLineLabel.text = headline
 //        subLineLabel.text = subheadline
 //    }
+    
     //MARK: Config UI
     private func configure(){
         backgroundColor = .blueFromColorSet
@@ -67,6 +68,7 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
         descriptionStackView.anchor(top: cellImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 60, paddingLeft: 30, paddingRight: 30)
     }
 }
+
     //MARK: Extension
 extension OnboardingCollectionViewCell: OnboardingViewUpdateItemsProtocol {
     func updateItems(image: UIImage, headline: String, subheadline: String) {

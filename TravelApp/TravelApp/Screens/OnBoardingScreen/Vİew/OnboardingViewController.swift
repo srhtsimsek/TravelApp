@@ -10,17 +10,20 @@ import UIKit
 final class OnboardingViewController: UIViewController {
     
     //MARK: View
-    private lazy var sliderCollectionView: UICollectionView = {
+    private let sliderCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .red
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.showsHorizontalScrollIndicator = false
+        
         return collectionView
     }()
+    
     private lazy var previousButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Prev", for: .normal)
@@ -48,7 +51,7 @@ final class OnboardingViewController: UIViewController {
         pageControl.currentPageIndicatorTintColor = .white
         return pageControl
     }()
-    private lazy var buttonsStackView: UIStackView = {
+    private let buttonsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
@@ -57,9 +60,9 @@ final class OnboardingViewController: UIViewController {
     }()
     
     //MARK: Properties
-    private lazy var currentPage: Int = 0
+    private let currentPage: Int = 0
     private lazy var isSignInButtonClicked: Bool = false
-    private lazy var slideItems: [OnboardingSlideItem] = [
+    private let slideItems: [OnboardingSlideItem] = [
             OnboardingSlideItem(headline: "MACERAYA ATIL", subheadline: "Yüzlerce gezi rotasını keşfet. Tüm turistik yerleri gör.", image: UIImage(resource: ._1)),
             OnboardingSlideItem(headline: "SEYEHAT ARKADAŞLARI EDİN", subheadline: "Dünya çapında seyahat arkadaşı bul. Yüzlerce seyehatsever seni bekliyor. Hemen arkadaş ekle. Yola çık, mesajlaş. Eğlen.", image: UIImage(resource: ._2)),
             OnboardingSlideItem(headline: "HADİ BAŞLAYALIM", subheadline: "Gideceğin ülkedeki konaklama yerlerini gör. Rezervasyon oluştur.", image: UIImage(resource: ._3))
@@ -104,9 +107,9 @@ final class OnboardingViewController: UIViewController {
     
     //MARK: Helpers
     private func redirectToLogin(){
-        let loginScreenViewController = SignInViewController()
-        loginScreenViewController.modalPresentationStyle = .fullScreen
-        self.present(loginScreenViewController, animated: true)
+        let loginVC = SignInViewController()
+        loginVC.modalPresentationStyle = .fullScreen
+        self.present(loginVC, animated: true)
         configFirstLaunch()
     }
     private func configFirstLaunch() {
@@ -126,6 +129,7 @@ final class OnboardingViewController: UIViewController {
         sliderCollectionView.delegate = self
         sliderCollectionView.dataSource = self
         sliderCollectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: OnboardingCollectionViewCell.reuseIdentifier)
+        
         sliderCollectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingBottom: 0)
     }
     private func configStackView(){
@@ -159,4 +163,5 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         let x = targetContentOffset.pointee.x
                 pageControl.currentPage = Int(x / view.frame.width)
     }
+    
 }

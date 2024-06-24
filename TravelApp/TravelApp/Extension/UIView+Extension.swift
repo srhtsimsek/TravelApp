@@ -22,6 +22,7 @@ extension UIView {
                 height: CGFloat? = nil) {
         
         translatesAutoresizingMaskIntoConstraints = false
+        
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
         }
@@ -41,7 +42,76 @@ extension UIView {
             heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
-
+    
+    func center(in view: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
+    func centerY(in view: UIView,
+                 left: NSLayoutXAxisAnchor? = nil,
+                 right: NSLayoutXAxisAnchor? = nil,
+                 paddingLeft: CGFloat = 0,
+                 paddingRight: CGFloat = 0) {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        if let left = left {
+            leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+        }
+        if let right = right {
+            rightAnchor.constraint(equalTo: right, constant: paddingRight).isActive = true
+        }
+    }
+        
+    func fillView() {
+        translatesAutoresizingMaskIntoConstraints = false
+        guard let view = superview else { return }
+        
+        anchor(top: view.topAnchor, left: view.leftAnchor,
+               bottom: view.bottomAnchor, right: view.rightAnchor)
+    }
+    
+    func centerX(in view: UIView,
+                 top: NSLayoutYAxisAnchor? = nil,
+                 bottom: NSLayoutYAxisAnchor? = nil,
+                 paddingTop: CGFloat = 0,
+                 paddingBottom: CGFloat = 0) {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        if let top = top {
+            topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
+        }
+        if let bottom = bottom {
+            bottom.constraint(equalTo: bottom, constant: paddingBottom).isActive = true
+        }
+    }
+    
+    func setDimensions(height: CGFloat,
+                       width: CGFloat) {
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: height).isActive = true
+        widthAnchor.constraint(equalToConstant: width).isActive = true
+    }
+    
+    func setHeight(_ height: CGFloat) {
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: height).isActive = true
+    }
+    
+    func setWidth(_ width: CGFloat) {
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalToConstant: width).isActive = true
+    }
+    
+    
     /// Adds multiple subviews to the current view.
     func addSubViewsFromExtension(_ views: UIView...){
         for view in views {

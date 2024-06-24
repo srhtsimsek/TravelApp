@@ -9,8 +9,10 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
+    //MARK: Properties
+    private var viewModel = SignInViewModel()
     //MARK: View
-    private lazy var logoImageView: UIImageView = {
+    private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .white
@@ -18,17 +20,17 @@ class SignInViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var titleLabel = CustomLabel(title: "Sign In", font: .semibold, fontSize: .big)
-    private lazy var descriptionLabel = CustomLabel(title: "are you ready for an adventure?", font: .regular, fontSize: .medium)
+    private let titleLabel = CustomLabel(title: "Sign In", font: .semibold, fontSize: .big)
+    private let descriptionLabel = CustomLabel(title: "are you ready for an adventure?", font: .regular, fontSize: .medium)
     
-    private lazy var emailTextField = CustomTextField(customfieldType: .email)
-    private lazy var passwordTextField = CustomTextField(customfieldType: .password)
+    private let emailTextField = CustomTextField(customfieldType: .email)
+    private let passwordTextField = CustomTextField(customfieldType: .password)
     
-    private lazy var signInButton = CustomButton(title: "Sign In", fontSize: .big, hasBackground: true)
-    private lazy var newUserButton = CustomButton(title: "New User? Create Account", fontSize: .medium)
-    private lazy var forgotPasswordButton = CustomButton(title: "I Forgot My Password", fontSize: .small)
+    private let signInButton = CustomButton(title: "Sign In", fontSize: .big, hasBackground: true)
+    private let newUserButton = CustomButton(title: "New User? Create Account", fontSize: .medium)
+    private let forgotPasswordButton = CustomButton(title: "I Forgot My Password", fontSize: .small)
     
-    private lazy var headStackView: UIStackView = {
+    private let headStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -36,7 +38,7 @@ class SignInViewController: UIViewController {
         stackView.backgroundColor = .white
         return stackView
     }()
-    private lazy var labelStackView: UIStackView = {
+    private let labelStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -44,27 +46,37 @@ class SignInViewController: UIViewController {
         stackView.backgroundColor = .white
         return stackView
     }()
-    private lazy var loginTextFieldsStackView: UIStackView = {
+    private let loginTextFieldsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.spacing = 30
         return stackView
     }()
-    private lazy var loginButtonsStackView: UIStackView = {
+    private let loginButtonsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.spacing = 10
         return stackView
     }()
-    
+
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        viewModel.delegate = self
+        configureNotificationObservers()
         addTarget()
-        print("s")
+    }
+    
+    //MARK: Helpers
+    private func configureNotificationObservers() {
+        signInButton.isEnabled = false
+        signInButton.backgroundColor = .systemBlue.withAlphaComponent(0.50)
+        
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .allEditingEvents)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .allEditingEvents)
     }
     
     //MARK: Add Target
@@ -77,16 +89,28 @@ class SignInViewController: UIViewController {
     //MARK: #selector
     @objc private func clickedSignInButton() {
         print("clicked sign in button")
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        viewModel.signIn(email: email, password: password)
     }
+    
     @objc private func clickedNewUserButton() {
         print("clicked new user button")
         let vc = SignUpViewController()
         self.present(vc, animated: true)
     }
+    
     @objc private func clickedForgotPasswordButton() {
         print("clicked forgot button")
         let vc = ForgotPasswordViewController()
         self.present(vc, animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        viewModel.email = emailTextField.text
+        viewModel.password = passwordTextField.text
+        formUpdate()
     }
     
     //MARK: Config UI
@@ -157,5 +181,26 @@ class SignInViewController: UIViewController {
     private func configLoginButton() {
         signInButton.adjustsImageWhenHighlighted = true
         signInButton.anchor(top: passwordTextField.bottomAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingRight: 20, height: 55)
+    }
+}
+
+//MARK: - Extension
+extension SignInViewController: FormViewModel {
+    func formUpdate() {
+        signInButton.backgroundColor = viewModel.buttonBackgroundColor
+        signInButton.isEnabled = viewModel.formIsValid
+    }
+}
+
+extension SignInViewController: AuthSignInViewModelDelegate {
+    func didSignInSuccess() {
+        let mainVC = TabBarController()
+        mainVC.modalPresentationStyle = .fullScreen
+        mainVC.modalTransitionStyle = .flipHorizontal
+        self.present(mainVC, animated: true)
+    }
+    
+    func didSignInFail(with error: any Error) {
+        UIAlertController.showSignInErrorAlert(on: self, error: error)
     }
 }

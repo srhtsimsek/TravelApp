@@ -9,6 +9,8 @@ import UIKit
 
 class ForgotPasswordViewController: UIViewController {
 
+    //MARK: Properties
+    private var viewModel = ForgotPasswordViewModel()
     //MARK: View
     private lazy var forgotImageView: UIImageView = {
         let imageView = UIImageView()
@@ -51,10 +53,19 @@ class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        configureNotificationObservers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    //MARK: Helpers
+    private func configureNotificationObservers(){
+        forgotButton.isEnabled = false
+        forgotButton.backgroundColor = .systemBlue.withAlphaComponent(0.50)
+        
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .allEditingEvents)
     }
     
     private func addTarget(){
@@ -63,6 +74,11 @@ class ForgotPasswordViewController: UIViewController {
     //MARK: #selector
     @objc private func clickedForgotButton() {
         
+    }
+    @objc func textDidChange(sender: UITextField) {
+        viewModel.email = emailTextField.text
+        
+        formUpdate()
     }
     //MARK: Config UI
     
@@ -120,5 +136,13 @@ class ForgotPasswordViewController: UIViewController {
     }
     private func configResetButton() {
         forgotButton.anchor(top: emailTextField.bottomAnchor, left: resetUIElementsStackView.leftAnchor, right: resetUIElementsStackView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingRight: 20, height: 55)
+    }
+}
+
+//MARK: - Extension
+extension ForgotPasswordViewController: FormViewModel {
+    func formUpdate() {
+        forgotButton.backgroundColor = viewModel.buttonBackgroundColor
+        forgotButton.isEnabled = viewModel.formIsValid
     }
 }

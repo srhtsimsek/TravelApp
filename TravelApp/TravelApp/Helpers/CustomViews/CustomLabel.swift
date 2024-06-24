@@ -16,6 +16,8 @@ class CustomLabel: UILabel {
         case medium
         /// small = ofSize: 13
         case small
+        /// small = ofSize: 11
+        case xsmall
     }
     init(title: String, font: UIFont.Weight ,fontSize: FontSize) {
         super.init(frame: .zero)
@@ -28,6 +30,8 @@ class CustomLabel: UILabel {
             self.font = .systemFont(ofSize: 18, weight: font)
         case .small:
             self.font = .systemFont(ofSize: 13, weight: font)
+        case .xsmall:
+            self.font = .systemFont(ofSize: 11, weight: font)
         }
     }
     

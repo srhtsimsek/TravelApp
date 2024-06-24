@@ -9,6 +9,9 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    //MARK: Properties
+    private var viewModel = SigUpViewModel()
+    
     //MARK: View
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -27,7 +30,6 @@ class SignUpViewController: UIViewController {
     private lazy var passwordTextField = CustomTextField(customfieldType: .password)
     
     private lazy var signUpButton = CustomButton(title: "Sign Up", fontSize: .big, hasBackground: true)
-    private lazy var signInButton = CustomButton(title: "Already have an account?", fontSize: .medium)
     
     private lazy var termsTextView: UITextView = {
         let attributedString = NSMutableAttributedString(string: "Kullanım Şartlarını ve Gizlilik Politikasını kabul ediyorum")
@@ -59,7 +61,7 @@ class SignUpViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = -30
+        stackView.spacing = -25
         stackView.backgroundColor = .white
         return stackView
     }()
@@ -83,6 +85,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupTextViewDelegate()
+        configureNotificationObservers()
         addTarget()
     }
     
@@ -90,21 +93,59 @@ class SignUpViewController: UIViewController {
     private func setupTextViewDelegate() {
         termsTextView.delegate = self
     }
+    
+    //MARK: Helpers
+    private func configureNotificationObservers(){
+        signUpButton.isEnabled = false
+        signUpButton.backgroundColor = .systemBlue.withAlphaComponent(0.50)
+        
+        fullNameTextField.addTarget(self, action: #selector(textDidChange), for: .allEditingEvents)
+        userNameTextField.addTarget(self, action: #selector(textDidChange), for: .allEditingEvents)
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .allEditingEvents)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .allEditingEvents)
+    }
+    private func clearTextFieldData() {
+        fullNameTextField.text = ""
+        userNameTextField.text = ""
+        emailTextField.text = ""
+        passwordTextField.text = ""
+    }
     //MARK: Add Target
     private func addTarget(){
         signUpButton.addTarget(self, action: #selector(clickedSignUpButton), for: .touchUpInside)
-        signInButton.addTarget(self, action: #selector(clickedSignInButton), for: .touchUpInside)
     }
     
     //MARK: #selector
     @objc private func clickedSignUpButton() {
         print("clicked sign up button")
+        guard let fullName = fullNameTextField.text else { return }
+        guard let username = userNameTextField.text?.lowercased() else { return }
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        let registerUser = RegisterUserModel(fullName: fullName,
+                                                    username: username,
+                                                    email: email,
+                                                    password: password)
+        
+        AuthService.shared.registerUser(userRequest: registerUser) { bool, error in
+            if let error = error {
+                UIAlertController.showRegistrationErrorAlert(on: self, error: error)
+            }
+            if bool {
+                self.clearTextFieldData()
+                self.dismiss(animated: true)
+            }
+        }
     }
-    @objc private func clickedSignInButton() {
-        print("clicked sign in button")
-        let vc = SignInViewController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+    
+    @objc func textDidChange(sender: UITextField) {
+        viewModel.fullName = fullNameTextField.text
+        viewModel.userName = userNameTextField.text
+        viewModel.email = emailTextField.text
+        viewModel.password = passwordTextField.text
+        
+        formUpdate()
     }
     
     //MARK: Config UI
@@ -132,14 +173,11 @@ class SignUpViewController: UIViewController {
         loginTextFieldsStackView.addArrangedSubview(emailTextField)
         loginTextFieldsStackView.addArrangedSubview(passwordTextField)
         loginTextFieldsStackView.addArrangedSubview(signUpButton)
-        loginTextFieldsStackView.addArrangedSubview(signInButton)
     }
     
     private func configLogInElementsStackView() {
         loginButtonsStackView.addArrangedSubview(signUpButton)
         loginButtonsStackView.addArrangedSubview(termsTextView)
-        loginButtonsStackView.addArrangedSubview(signInButton)
-
     }
     
     private func configStackViews(){
@@ -161,7 +199,7 @@ class SignUpViewController: UIViewController {
         configImageview()
     }
     
-    private func configImageview(){
+    private func configImageview() {
         logoImageView.layer.masksToBounds = false
         logoImageView.clipsToBounds = true
         logoImageView.layer.borderWidth = 2.0
@@ -176,6 +214,11 @@ class SignUpViewController: UIViewController {
 //        emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
 //        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: userNameTextField.frame.size.height))
 //        
+        fullNameTextField.clearButtonMode = .whileEditing
+        userNameTextField.clearButtonMode = .whileEditing
+        emailTextField.clearButtonMode = .whileEditing
+        passwordTextField.clearButtonMode = .whileEditing
+        
         fullNameTextField.anchor(top: loginTextFieldsStackView.topAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingRight: 10, height: 55)
         userNameTextField.anchor(top: fullNameTextField.bottomAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingRight: 10, height: 55)
         emailTextField.anchor(top: userNameTextField.bottomAnchor, left: loginTextFieldsStackView.leftAnchor, right: loginTextFieldsStackView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingRight: 10, height: 55)
@@ -185,9 +228,8 @@ class SignUpViewController: UIViewController {
     private func configLoginButton() {
         signUpButton.anchor(top: loginButtonsStackView.topAnchor, left: loginButtonsStackView.leftAnchor, right: loginButtonsStackView.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingRight: 20, height: 55)
         
-        termsTextView.anchor(top: signUpButton.bottomAnchor, paddingTop: 5, height: 20)
-
-        signInButton.anchor(top: termsTextView.bottomAnchor, left: loginButtonsStackView.leftAnchor, right: loginButtonsStackView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingRight: 20)
+        termsTextView.anchor(top: signUpButton.bottomAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingTop: 5, paddingBottom: 130, height: 20)
+        
     }
     
     private func changeAttributedTextColor() {
@@ -197,6 +239,7 @@ class SignUpViewController: UIViewController {
 }
 
 //MARK: -Extension
+    //MARK: TextViewDelegate Extension
 extension SignUpViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.scheme == "terms" {
@@ -223,3 +266,10 @@ extension SignUpViewController: UITextViewDelegate {
     }
 }
 
+    //MARK: FormViewModel Extension
+extension SignUpViewController: FormViewModel {
+    func formUpdate() {
+        signUpButton.backgroundColor = viewModel.buttonBackgroundColor
+        signUpButton.isEnabled = viewModel.formIsValid
+    }
+}
