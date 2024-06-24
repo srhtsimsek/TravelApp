@@ -19,7 +19,7 @@ struct UserService {
     public func fetchUser(completion: @escaping(UserModel?) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        COLLECTION_USERS.document(uid).getDocument { snapshot, error in
+        Constants.FirebaseConstants.COLLECTION_USERS.document(uid).getDocument { snapshot, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -39,7 +39,7 @@ struct UserService {
     
     //MARK: Fetch All Users
     public func fetchAllUsers(completion: @escaping([UserModel]?) -> Void) {
-        COLLECTION_USERS.getDocuments { snapshot, error in
+        Constants.FirebaseConstants.COLLECTION_USERS.getDocuments { snapshot, error in
             if let error = error {
                 print("Fetch All Users Error: \(error.localizedDescription)")
             }
@@ -67,12 +67,12 @@ struct UserService {
     //MARK: Follow User
     public func followUser(who uid: String, completion: @escaping(FirebaseCompletionHandler)) {
         guard let currentUserId = Auth.auth().currentUser?.uid else { return }
-        COLLECTION_FOLLOWING.document(currentUserId).collection(userFollowing).document(uid).setData([:]) { error in
+        Constants.FirebaseConstants.COLLECTION_FOLLOWING.document(currentUserId).collection(userFollowing).document(uid).setData([:]) { error in
             if let error = error {
                 print("user could not follow ---> \(error.localizedDescription)")
                 return
             }
-            COLLECTION_FOLLOWERS.document(uid).collection(userFollowers).document(currentUserId).setData([:]) { error in
+            Constants.FirebaseConstants.COLLECTION_FOLLOWERS.document(uid).collection(userFollowers).document(currentUserId).setData([:]) { error in
                 if let error = error {
                     print("followUser func ---> \(error.localizedDescription)")
                     return
@@ -84,12 +84,12 @@ struct UserService {
     //MARK: Unfollow User
     public func unFollowUser(who uid: String, completion: @escaping(FirebaseCompletionHandler)) {
         guard let currentUserId = Auth.auth().currentUser?.uid else { return }
-        COLLECTION_FOLLOWING.document(currentUserId).collection(userFollowing).document(uid).delete { error in
+        Constants.FirebaseConstants.COLLECTION_FOLLOWING.document(currentUserId).collection(userFollowing).document(uid).delete { error in
             if let error = error {
                 print("user could not unfollowed ---> \(error.localizedDescription)")
                 return
             }
-            COLLECTION_FOLLOWERS.document(uid).collection(userFollowers).document(currentUserId).delete { error in
+            Constants.FirebaseConstants.COLLECTION_FOLLOWERS.document(uid).collection(userFollowers).document(currentUserId).delete { error in
                 if let error = error {
                     print("unFollowUser func ---> \(error.localizedDescription)")
                     return
@@ -101,7 +101,7 @@ struct UserService {
     
     public func checkIsUserFollowing(uid: String, completion: @escaping(Bool) -> Void) {
         guard let currentUserId = Auth.auth().currentUser?.uid else { return }
-        COLLECTION_FOLLOWING.document(currentUserId).collection(userFollowing).document(uid).getDocument { snapshot, error in
+        Constants.FirebaseConstants.COLLECTION_FOLLOWING.document(currentUserId).collection(userFollowing).document(uid).getDocument { snapshot, error in
             if let error = error {
                 print("checkIsUserFollowing func \(error.localizedDescription)")
             }

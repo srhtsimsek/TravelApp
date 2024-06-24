@@ -51,6 +51,7 @@
 		EC803F6C2BF0A0CB00E51BCE /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EC803F6B2BF0A0CB00E51BCE /* FirebaseDatabase */; };
 		EC803F6E2BF0A0CB00E51BCE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EC803F6D2BF0A0CB00E51BCE /* FirebaseFirestore */; };
 		EC803F702BF0A0CB00E51BCE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EC803F6F2BF0A0CB00E51BCE /* FirebaseStorage */; };
+		ECA0AA5F2C29E40400F81181 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA0AA5E2C29E40400F81181 /* FirebaseConstants.swift */; };
 		ECC576412C0839E500302B8C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC576402C0839E500302B8C /* Constants.swift */; };
 		ECC576462C08656300302B8C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC576452C08656300302B8C /* UserService.swift */; };
 		ECC5764A2C086DC300302B8C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC576492C086DC300302B8C /* UserModel.swift */; };
@@ -131,6 +132,7 @@
 		EC6BE99B2C0C92C5005958D4 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		EC6BE99D2C0C937C005958D4 /* SearchTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewHeader.swift; sourceTree = "<group>"; };
 		EC803F632BF09E2800E51BCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ECA0AA5E2C29E40400F81181 /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		ECC576402C0839E500302B8C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ECC576452C08656300302B8C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		ECC576492C086DC300302B8C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				EC2C3FEB2BDD3DBB00EFCFD4 /* Extension */,
 				EC58F1222BFDAA8300D73BBA /* Helpers */,
+				ECC576422C08640100302B8C /* Constant */,
 				ECF128562BF6587B00087D97 /* Service */,
 				EC2C3FD82BDCE4B000EFCFD4 /* Screens */,
 				EC2C3FD72BDCE33E00EFCFD4 /* App */,
@@ -457,7 +460,6 @@
 		EC58F1222BFDAA8300D73BBA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				ECC576422C08640100302B8C /* Constant */,
 				EC58F1252BFDB43C00D73BBA /* Manager */,
 				EC3C7ADF2BEA2D8F0016C611 /* CustomViews */,
 			);
@@ -537,6 +539,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ECA0AA5D2C29E3C800F81181 /* FirebaseConstants */ = {
+			isa = PBXGroup;
+			children = (
+				ECA0AA5E2C29E40400F81181 /* FirebaseConstants.swift */,
+			);
+			path = FirebaseConstants;
+			sourceTree = "<group>";
+		};
 		ECA316202C120A89000CFAC4 /* CompositionalLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +568,7 @@
 			isa = PBXGroup;
 			children = (
 				ECC576402C0839E500302B8C /* Constants.swift */,
+				ECA0AA5D2C29E3C800F81181 /* FirebaseConstants */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -806,6 +817,7 @@
 			files = (
 				EC662C2D2BEDDE13004E51BE /* SignUpViewController.swift in Sources */,
 				EC58F12B2BFDC0AF00D73BBA /* ExploreLocationCollectionViewCell.swift in Sources */,
+				ECA0AA5F2C29E40400F81181 /* FirebaseConstants.swift in Sources */,
 				EC2C3FDF2BDD1D9500EFCFD4 /* OnboardingSlideItem.swift in Sources */,
 				EC09A0F12BFD3BE60055023D /* UsersCellModel.swift in Sources */,
 				EC0784082C05E92800812FAE /* ProfileHeaderCollectionReusableView.swift in Sources */,

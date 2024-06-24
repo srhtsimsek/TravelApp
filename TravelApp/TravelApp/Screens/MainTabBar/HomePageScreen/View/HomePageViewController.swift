@@ -66,7 +66,7 @@ class HomePageViewController: UIViewController {
     private let flightimageView: UIImageView = {
         let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: 250, height: 150))
         imageview.contentMode = .scaleAspectFill
-        imageview.image = .plane
+//        imageview.image = .plane
         return imageview
     }()
     private let viewForflight: UIView = {
@@ -77,7 +77,7 @@ class HomePageViewController: UIViewController {
     private let rentCarimageView: UIImageView = {
         let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 150))
         imageview.contentMode = .scaleAspectFill
-        imageview.image = .car
+//        imageview.image = .car
         return imageview
     }()
     

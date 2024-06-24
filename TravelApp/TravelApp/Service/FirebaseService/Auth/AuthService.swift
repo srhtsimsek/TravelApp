@@ -45,7 +45,7 @@ struct AuthService {
                                            "username": username,
                                            "email": email]
             
-            COLLECTION_USERS
+            Constants.FirebaseConstants.COLLECTION_USERS
                 .document(userUid)
                 .setData(userData) { error in
                     if let error = error {
