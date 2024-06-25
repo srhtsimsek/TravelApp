@@ -7,14 +7,20 @@
 
 import Foundation
 
+protocol ServiceType {
+    typealias completionHandler<T> = Swift.Result<T, Error>
+    func getUsers(completion: @escaping (completionHandler<[User]>) -> Void)
+}
+
 struct NetworkManager {
+    
     enum SerializationError: Swift.Error {
         case requestError(internal: Swift.Error)
         case serializationError(internal: Swift.Error)
     }
     
     static let shared = NetworkManager()
-    private init() {}
+    private init() { }
     
     //MARK: Base Func
     private func request<T: Decodable>(_ endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> Void) {
@@ -45,9 +51,11 @@ struct NetworkManager {
         
         task.resume()
     }
-    
-    //MARK: Get User Func
-    func getUser(completion: @escaping (Result<[User], Error>) -> Void) {
+}
+
+//MARK: - Get Users
+extension NetworkManager: ServiceType {
+    func getUsers(completion: @escaping (completionHandler<[User]>) -> Void) {
         let endpoint = Endpoint.getUsers
         request(endpoint, completion: completion)
     }

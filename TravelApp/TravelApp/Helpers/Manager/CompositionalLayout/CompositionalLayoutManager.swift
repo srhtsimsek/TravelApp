@@ -11,7 +11,6 @@ enum LayoutType {
     case horizontal
     case normal(headerIdentifier: String?)
     case users(headerIdentifier: String?)
-//    case userProfil(headerIdentifier: String?)
 }
 
 final class CompositionalLayoutManager {
@@ -27,8 +26,6 @@ final class CompositionalLayoutManager {
             return createNormalSection(headerIdentifier: headerIdentifier)
         case .users(let headerIdentifier):
             return createUserSection(headerIdentifier: headerIdentifier)
-//        case .userProfil(let headerIdentifier):
-//            return createUserProfile(headerIdentifier: headerIdentifier)
         }
     }
     
@@ -94,26 +91,4 @@ final class CompositionalLayoutManager {
         section.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 7, bottom: 40, trailing: 5)
         return section
     }
-    
-//    private func createUserProfile(headerIdentifier: String?) -> NSCollectionLayoutSection {
-//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(128))
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//    
-//        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.333) , heightDimension: .absolute(512))
-//        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-//        
-//        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15)
-//
-//        let section = NSCollectionLayoutSection(group: group)
-//        section.orthogonalScrollingBehavior = .continuous
-//        
-//        if let headerIdentifier = headerIdentifier, headerIdentifier != "" {
-//            section.boundarySupplementaryItems = [
-//                .init(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(350)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-//            ]
-//        }
-//        
-//        section.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 7, bottom: 40, trailing: 5)
-//        return section
-//    }
 }

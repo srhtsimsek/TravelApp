@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class HomePageViewController: UIViewController {
+final class HomePageViewController: UIViewController {
     
     //MARK: View
     private let scrollView: UIScrollView = {

@@ -26,13 +26,14 @@ enum Endpoint {
 
 extension Endpoint: EndpointProtocol {
     var baseURL: String {
-        return "https://jsonplaceholder.typicode.com"
+        return Constants.NetworkConstant.baseURL
     }
     
     var path: String {
         switch self {
         case .getUsers:
-            return "/users"
+//            return "/users"
+            return Constants.NetworkConstant.getUsers
         }
     }
     

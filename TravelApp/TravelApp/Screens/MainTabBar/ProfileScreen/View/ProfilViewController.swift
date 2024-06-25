@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfilViewController: UICollectionViewController {
+final class ProfilViewController: UICollectionViewController {
     
     //MARK: Properties
     var user: UserModel

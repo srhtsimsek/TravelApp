@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+final class SignInViewController: UIViewController {
     
     //MARK: Properties
     private var viewModel = SignInViewModel()

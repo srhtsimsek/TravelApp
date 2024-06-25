@@ -7,4 +7,5 @@
 
 import Foundation
 
+///Base Constant Model
 class Constants { }

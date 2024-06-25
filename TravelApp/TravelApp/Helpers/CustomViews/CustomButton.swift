@@ -8,11 +8,13 @@
 import UIKit
 
 class CustomButton: UIButton {
+    
     enum FontSize {
         case small
         case medium
         case big
     }
+    
     init(title: String, fontSize: FontSize, hasBackground: Bool = false){
         super.init(frame: .zero)
 

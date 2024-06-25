@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController {
+final class ForgotPasswordViewController: UIViewController {
 
     //MARK: Properties
     private var viewModel = ForgotPasswordViewModel()

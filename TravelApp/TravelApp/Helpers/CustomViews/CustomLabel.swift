@@ -19,8 +19,10 @@ class CustomLabel: UILabel {
         /// small = ofSize: 11
         case xsmall
     }
+    
     init(title: String, font: UIFont.Weight ,fontSize: FontSize) {
         super.init(frame: .zero)
+        
         self.text = title
         
         switch fontSize {

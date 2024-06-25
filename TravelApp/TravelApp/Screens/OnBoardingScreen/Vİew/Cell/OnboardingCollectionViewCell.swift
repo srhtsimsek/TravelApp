@@ -7,7 +7,6 @@
 
 import UIKit
 
-    //MARK: Protocol
 protocol OnboardingViewUpdateItemsProtocol {
     func updateItems(image: UIImage, headline: String, subheadline: String)
 }
@@ -52,11 +51,6 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-//    func updateItems(image: UIImage, headline: String, subheadline: String) {
-//        cellImageView.image = image
-//        headLineLabel.text = headline
-//        subLineLabel.text = subheadline
-//    }
     
     //MARK: Config UI
     private func configure(){

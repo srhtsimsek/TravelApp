@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class TermsAndConditionsViewController: UIViewController {
+final class TermsAndConditionsViewController: UIViewController {
     
     //MARK: Properties
     private var urlString: String?

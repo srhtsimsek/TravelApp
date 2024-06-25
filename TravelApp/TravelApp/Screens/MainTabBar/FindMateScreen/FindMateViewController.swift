@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FindMateViewController: UIViewController {
+final class FindMateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

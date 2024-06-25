@@ -8,17 +8,9 @@
 import UIKit
 import FirebaseAuth
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     
     private var viewModel = TabBarControllerViewModel()
-    
-//    var user: UserModel? {
-//        didSet {
-//            guard let user = user else { return }
-//            configureTabViewControllers(with: user)
-//            hideLoadingView()
-//        }
-//    }
     
     //MARK: View
     private let viewActityIndocator: UIView = {
@@ -51,7 +43,7 @@ class TabBarController: UITabBarController {
 //        checkUserIsLogIn()
         viewModel.checkUserIsLogin()
     }
-
+    
     //MARK: Helpers
     private func bindViewModel() {
         viewModel.userDidChange = { [weak self] user in
