@@ -4,7 +4,6 @@
 //
 //  Created by Serhat  Şimşek  on 13.06.2024.
 //
-//https://jsonplaceholder.typicode.com/users
 
 import Foundation
 

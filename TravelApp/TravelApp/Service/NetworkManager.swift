@@ -24,7 +24,9 @@ struct NetworkManager {
     
     //MARK: Base Func
     private func request<T: Decodable>(_ endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> Void) {
+        
         let task = URLSession.shared.dataTask(with: endpoint.request()) { data, response, error in
+            
             if let error = error {
                 completion(.failure(SerializationError.requestError(internal: error)))
                 return
@@ -55,6 +57,7 @@ struct NetworkManager {
 
 //MARK: - Get Users
 extension NetworkManager: ServiceType {
+    
     func getUsers(completion: @escaping (completionHandler<[User]>) -> Void) {
         let endpoint = Endpoint.getUsers
         request(endpoint, completion: completion)
